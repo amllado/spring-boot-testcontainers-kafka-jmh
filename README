@@ -1,0 +1,24 @@
+[2024-03-28] Arturo Martín Lladó - amartinl@aubay.es
+
+Requerimientos para probar este proyecto:
+
+- JDK 17.
+- Probado con Maven 3.9.5.
+- Instalación funcional de Docker, con permisos de ejecución para el usuario que invoque las pruebas desde Maven/IDE/etc.
+
+Cómo ejecutar los tests:
+
+	- Mediante Maven, con el típico comando "mvn test".
+	- Mediante plugin de JUnit del IDE.
+
+Referencias para este proyecto:
+
+	- Testcontainers + Kafka:
+		- https://testcontainers.com/guides/testing-spring-boot-kafka-listener-using-testcontainers/
+		- https://www.baeldung.com/spring-boot-kafka-testing
+		- https://www.hascode.com/2019/01/using-throwaway-containers-for-integration-testing-with-java-junit-5-and-testcontainers/
+
+	- Benchmarking JMH:
+		- https://www.baeldung.com/java-microbenchmark-harness
+		- https://medium.com/@truongbui95/jmh-java-microbenchmark-harness-tests-in-java-applications-f607f00f536d
+		- https://gist.github.com/msievers/ce80d343fc15c44bea6cbb741dde7e45

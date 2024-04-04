@@ -74,11 +74,6 @@ public class KafkaConsumerProducerJMHTest {
 	@DynamicPropertySource
 	static void overrideProperties(DynamicPropertyRegistry registry) {
 		registry.add("spring.kafka.bootstrap-servers", kafka::getBootstrapServers);
-		registry.add("spring.kafka.max.request.size", KafkaConsumerProducerJMHTest::getKK);
-	}
-	
-	static String getKK() {
-		return "1398300";
 	}
 	
 	/*

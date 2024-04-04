@@ -24,6 +24,14 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
 
+/**
+ * XXX amartinl: clase que sirve como POC de combinación de las siguientes tecnologías:
+ * 
+ * 1. Spring Boot como framework base de la solución.
+ * 2. JUnit 5, para implementación de tests.
+ * 3. Testcontainers, para lanzar pruebas de integración desde tests de JUnit, levantando contenedores con la integración a probar (Kafka, en este caso).
+ * 
+ */
 @SpringBootTest
 @Testcontainers
 @DirtiesContext

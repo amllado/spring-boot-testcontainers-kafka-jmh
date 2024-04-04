@@ -20,9 +20,9 @@ public class KafkaConsumer {
 
     @KafkaListener(topics = "${test.topic}")
     public void receive(ConsumerRecord<?, ?> consumerRecord) {
-        LOGGER.info("received payload='{}'", consumerRecord.toString());
+        LOGGER.debug("received payload='{}'", consumerRecord.toString());
 
-        payload = (ImiMessage) consumerRecord.value(); //consumerRecord.toString();
+        payload = (ImiMessage) consumerRecord.value();
         latch.countDown();
     }
 

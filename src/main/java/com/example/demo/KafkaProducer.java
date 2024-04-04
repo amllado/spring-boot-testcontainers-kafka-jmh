@@ -15,7 +15,7 @@ public class KafkaProducer {
     private KafkaTemplate<String, ImiMessage> kafkaTemplate;
 
     public void send(String topic, ImiMessage payload) {
-        LOGGER.info("sending payload='{}' to topic='{}'", payload, topic);
+        LOGGER.debug("sending payload='{}' to topic='{}'", payload, topic);
         kafkaTemplate.send(topic, payload);
     }
 

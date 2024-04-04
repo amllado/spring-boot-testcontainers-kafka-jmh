@@ -21,4 +21,5 @@ Referencias para este proyecto:
 	- Benchmarking JMH:
 		- https://www.baeldung.com/java-microbenchmark-harness
 		- https://medium.com/@truongbui95/jmh-java-microbenchmark-harness-tests-in-java-applications-f607f00f536d
+		- https://nickolasfisher.com/blog/How-to-Benchmark-Java-Code-Using-JUnit-and-JMH
 		- https://gist.github.com/msievers/ce80d343fc15c44bea6cbb741dde7e45

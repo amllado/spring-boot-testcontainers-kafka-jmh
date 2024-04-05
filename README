@@ -1,17 +1,40 @@
 [2024-03-28] Arturo Martín Lladó - amartinl@aubay.es
 
-Requerimientos para probar este proyecto:
+== Requerimientos para probar este proyecto ==
 
 - JDK 17.
 - Probado con Maven 3.9.5.
 - Instalación funcional de Docker, con permisos de ejecución para el usuario que invoque las pruebas desde Maven/IDE/etc.
 
-Cómo ejecutar los tests:
+== Cómo ejecutar los tests ==
 
 	- Mediante Maven, con el típico comando "mvn test".
 	- Mediante plugin de JUnit del IDE.
+	
+	Es posible ejecutar los tests sin usar Testcontainers, conectando a un Kafka externo. Basta con comentar esta parte de los tests:
+	"
+		@Container
+		static final KafkaContainer kafka = new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:latest"));
+	
+		@DynamicPropertySource
+		static void overrideProperties(DynamicPropertyRegistry registry) {
+			registry.add("spring.kafka.bootstrap-servers", kafka::getBootstrapServers);
+		}
+	"
+	
+	El application.properties ya está configurado para trabajar en un Kafka que esté escuchando en localhost en el puerto 9092 (estándar).	
+	Podemos arrancar uno, por ejemplo, con este comando de Docker:
+	
+	docker run -i --name kafka-server --network app-tier -p9092:9092 --hostname localhost \
+	    -e KAFKA_CFG_NODE_ID=0 \
+	    -e KAFKA_CFG_PROCESS_ROLES=controller,broker \
+	    -e KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093 \
+	    -e KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT \
+	    -e KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka-server:9093 \
+	    -e KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER \
+	    bitnami/kafka:latest
 
-Referencias para este proyecto:
+== Referencias para este proyecto ==
 
 	- Testcontainers + Kafka:
 		- https://testcontainers.com/guides/testing-spring-boot-kafka-listener-using-testcontainers/

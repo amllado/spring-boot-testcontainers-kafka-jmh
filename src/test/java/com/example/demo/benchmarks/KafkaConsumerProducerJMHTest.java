@@ -14,9 +14,7 @@ import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.results.format.ResultFormatType;
@@ -60,8 +58,6 @@ import com.example.demo.TestDemoKafkaTestcontainersApplication;
 @Import(TestDemoKafkaTestcontainersApplication.class)
 // JMH properties.
 @State(Scope.Benchmark)
-@BenchmarkMode({Mode.Throughput, Mode.AverageTime})
-@OutputTimeUnit(TimeUnit.MILLISECONDS)
 public class KafkaConsumerProducerJMHTest {
 
 	/*
@@ -145,6 +141,9 @@ public class KafkaConsumerProducerJMHTest {
             .measurementIterations(1)
             // do not use forking or the benchmark methods will not see references stored within its class
             .forks(0)
+            .mode(Mode.AverageTime)
+            .mode(Mode.Throughput)
+            .timeUnit(TimeUnit.MILLISECONDS)
             // do not use multiple threads
             .threads(1)
             .shouldDoGC(true)

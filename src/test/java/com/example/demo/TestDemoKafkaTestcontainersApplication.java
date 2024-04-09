@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.TestConfiguration;
 public class TestDemoKafkaTestcontainersApplication {
 	
 /*
-	XXX amartinl: definiendo el componente de este modo sería el contenedor elegido
+	XXX amllado: definiendo el componente de este modo sería el contenedor elegido
 	para ser compartido por todos los tests. De momento lo descartamos, dejando que
 	cada clase de test elija cuál instanciar.
 	

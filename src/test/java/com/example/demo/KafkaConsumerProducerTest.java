@@ -25,7 +25,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
 
 /**
- * XXX amartinl: clase que sirve como POC de combinación de las siguientes tecnologías:
+ * XXX amllado: clase que sirve como POC de combinación de las siguientes tecnologías:
  * 
  * 1. Spring Boot como framework base de la solución.
  * 2. JUnit 5, para implementación de tests.
@@ -40,7 +40,7 @@ import org.testcontainers.utility.DockerImageName;
 class KafkaConsumerProducerTest {
 
 	/*
-		XXX amartinl: contenedor para el Kafka de los tests de esta clase. Si se desea que exista
+		XXX amllado: contenedor para el Kafka de los tests de esta clase. Si se desea que exista
 		un contenedor común para todas las clases de test, ver el comentario en TestDemoKafkaTestcontainersApplication.
 	 */
 	

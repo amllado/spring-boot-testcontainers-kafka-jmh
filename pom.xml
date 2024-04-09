@@ -8,13 +8,6 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<!-- 
-	amartinl: por estúpido que parezca, la versión del parent no se puede
-		parametrizar
-	a no ser que sea un proyecto multimódulo y usando el plugin
-		https://maven.apache.org/maven-ci-friendly.html.
--->
-		<!--		<version>${spring.boot.version}</version>-->
 		<version>3.2.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
@@ -28,7 +21,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>17</java.version>
-		<spring.boot.version>3.2.4</spring.boot.version>
 		<jmh.version>1.37</jmh.version>
 	</properties>
 

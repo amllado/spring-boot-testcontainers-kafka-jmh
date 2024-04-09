@@ -42,7 +42,7 @@ import com.example.demo.KafkaProducer;
 import com.example.demo.TestDemoKafkaTestcontainersApplication;
 
 /**
- * XXX amartinl: clase que sirve como POC de combinación de las siguientes tecnologías:
+ * XXX amllado: clase que sirve como POC de combinación de las siguientes tecnologías:
  * 
  * 1. Spring Boot como framework base de la solución.
  * 2. JUnit 5, para implementación de tests.
@@ -61,7 +61,7 @@ import com.example.demo.TestDemoKafkaTestcontainersApplication;
 public class KafkaConsumerProducerJMHTest {
 
 	/*
-		XXX amartinl: contenedor para el Kafka de los tests de esta clase. Si se desea que exista
+		XXX amllado: contenedor para el Kafka de los tests de esta clase. Si se desea que exista
 		un contenedor común para todas las clases de test, ver el comentario en TestDemoKafkaTestcontainersApplication.
 	 */
 	@Container
@@ -73,7 +73,7 @@ public class KafkaConsumerProducerJMHTest {
 	}
 	
 	/*
-		XXX amartinl: para ligar las funcionalidades de Spring Boot con JMH necesitamos que los componentes que
+		XXX amllado: para ligar las funcionalidades de Spring Boot con JMH necesitamos que los componentes que
 		manejará el contenedor IoC de Spring sean estáticos y se establezca su valor mediante setters. Si no,
 		si usamos el método "normal" de inyección de dependencias en elementos no estáticos, no funcionará.
 		
@@ -120,7 +120,7 @@ public class KafkaConsumerProducerJMHTest {
 	}
 	
 	/**
-	 * XXX amartinl: test que se podrá lanzar mediante plugin de JUnit del IDE o mediante el goal de tests de Maven.
+	 * XXX amllado: test que se podrá lanzar mediante plugin de JUnit del IDE o mediante el goal de tests de Maven.
 	 * Se encarga de configurar la infraestructura para ejecutar todos los métodos que tenga una anotación @Benchmark.
 	 * De este modo ligamos JUnit + JMH.
 	 * 
@@ -197,7 +197,7 @@ public class KafkaConsumerProducerJMHTest {
 	}
     
     // @Benchmark
-    // TODO amartinl: configurar contenedor de Kafka/Producer/Consumer para soportar este tamaño de mensaje.
+    // TODO amllado: configurar contenedor de Kafka/Producer/Consumer para soportar este tamaño de mensaje.
     public void givenKafkaDockerContainer_whenSendingWithDefaultTemplate1MiB_thenMessageReceived() throws Exception {
 
 		ImiMessage data = new ImiMessage(new Timestamp(new Date().getTime()), "srcApp", "dstApp", bytes1MiB);
@@ -211,7 +211,7 @@ public class KafkaConsumerProducerJMHTest {
 	}
     
     // @Benchmark
-    // TODO amartinl: configurar contenedor de Kafka/Producer/Consumer para soportar este tamaño de mensaje.
+    // TODO amllado: configurar contenedor de Kafka/Producer/Consumer para soportar este tamaño de mensaje.
     public void givenKafkaDockerContainer_whenSendingWithDefaultTemplate10MiB_thenMessageReceived() throws Exception {
 
 		ImiMessage data = new ImiMessage(new Timestamp(new Date().getTime()), "srcApp", "dstApp", bytes10MiB);
